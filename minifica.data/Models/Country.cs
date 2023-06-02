@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace minifica.data.Models
 {
-	public class BaseEntity
+	public class Country : BaseEntity
 	{
-		public int Id { get; set; }
-		public bool Active = true;
+		public string Name { get; set; }
 	}
 }
