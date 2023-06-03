@@ -13,11 +13,6 @@ namespace minifica.api.Controllers
 			_manager = manager;
 		}
 
-		public virtual IActionResult Index()
-		{
-			return View();
-		}
-
 		[HttpGet]
 		public virtual IActionResult GetAll()
 		{
@@ -54,11 +49,6 @@ namespace minifica.api.Controllers
 			}
 
 			return Json(result);
-		}
-
-		public virtual IActionResult Create()
-		{
-			return View();
 		}
 
 		[HttpPost]
@@ -102,7 +92,6 @@ namespace minifica.api.Controllers
 
 			return Json(result);
 		}
-
 
 		[HttpDelete]
 		public virtual IActionResult Delete(int id)

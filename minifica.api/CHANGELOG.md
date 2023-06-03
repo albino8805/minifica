@@ -1,5 +1,8 @@
 ﻿### Changelog
 
+## [DevOps-8] - [2023-06-02] - Alfredo Ferretis
+* Created CRUD entity Module.
+
 ## [DevOps-8] - [2023-06-02] - Albino Martinez
 * Added BaseViewModel class.
 
