@@ -1,5 +1,8 @@
 ﻿### Changelog
 
+## [DevOps-10] - [2023-06-05] - Alfredo Ferretis
+* Created CRUD entity Action.
+
 ## [DevOps-8] - [2023-06-02] - Alfredo Ferretis
 * Created CRUD entity Module.
 
