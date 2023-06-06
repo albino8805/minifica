@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace minifica.data.Models
+﻿namespace minifica.data.Models
 {
     public class ModuleAction : BaseEntity
     {
@@ -17,7 +10,7 @@ namespace minifica.data.Models
 
         public virtual Module ModuleFKNavigation { get; set; } = null!;
 
-        public virtual data.Models.Action ActionFKNavigation { get; set; } = null!;
+        public virtual Action ActionFKNavigation { get; set; } = null!;
 
         public virtual Profile ProfileFKNavigation { get; set; } = null!;
     }
