@@ -12,8 +12,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
 
+builder.Services.AddScoped<ICountryManager, CountryManager>();
 builder.Services.AddScoped<IModuleManager, ModuleManager>();
 
 var app = builder.Build();
