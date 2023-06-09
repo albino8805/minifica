@@ -2,7 +2,7 @@
 
 namespace minifica.data.IRepository
 {
-    public interface ICountryRepository : IBaseRepository<Country>
+    public interface IStateRepository : IBaseRepository<State>
     {
     }
 }
