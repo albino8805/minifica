@@ -9,7 +9,7 @@ namespace minifica.api.Controllers
     {
         private readonly IStateManager _manager;
 
-        public StateController(ICountryManager manager) : base(manager)
+        public StateController(IStateManager manager) : base(manager)
         {
             _manager = manager;
         }
@@ -20,10 +20,10 @@ namespace minifica.api.Controllers
         public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
-        public override IActionResult Add(CountryViewModel country) => base.Add(country);
+        public override IActionResult Add(StateViewModel state) => base.Add(state);
 
         [HttpPatch]
-        public override IActionResult Update(int id, CountryViewModel country) => base.Update(id, country);
+        public override IActionResult Update(int id, StateViewModel state) => base.Update(id, state);
 
         [HttpDelete]
         public override IActionResult Delete(int id) => base.Delete(id);
