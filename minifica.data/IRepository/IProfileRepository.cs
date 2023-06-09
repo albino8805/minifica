@@ -2,7 +2,7 @@
 
 namespace minifica.data.IRepository
 {
-    public interface IModuleRepository: IBaseRepository<Module>
+    public interface IProfileRepository: IBaseRepository<Profile>
     {
 
     }
