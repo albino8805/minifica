@@ -7,9 +7,9 @@ namespace minifica.api.Controllers
 {
     public class StateController : BaseController<StateViewModel, State>
     {
-        private readonly ICountryManager _manager;
+        private readonly IStateManager _manager;
 
-        public CountryController(ICountryManager manager) : base(manager)
+        public StateController(ICountryManager manager) : base(manager)
         {
             _manager = manager;
         }

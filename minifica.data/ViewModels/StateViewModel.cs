@@ -2,7 +2,7 @@
 
 namespace minifica.data.ViewModels
 {
-    public class State : BaseEntity
+    public class StateViewModel : BaseViewModel
     {
         public string Name { get; set; }
 
