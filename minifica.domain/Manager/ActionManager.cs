@@ -1,16 +1,17 @@
 ﻿using minifica.data.IRepository;
 using minifica.data.ViewModels;
 using minifica.domain.IManager;
+using ActionEntity = minifica.data.Models.Action;
 
 namespace minifica.domain.Manager
 {
-    public class ActionManager: BaseManager<ActionViewModel, data.Models.Action>, IActionManager
+    public class ActionManager: BaseManager<ActionViewModel, ActionEntity>, IActionManager
     {
         public ActionManager(IActionRepository repository) : base(repository) { }
 
-        public override data.Models.Action AddConverter(ActionViewModel viewModel)
+        public override ActionEntity AddConverter(ActionViewModel viewModel)
         {
-            return new data.Models.Action()
+            return new ActionEntity()
             {
                 Id = viewModel.Id,
                 Name = viewModel.Name,
@@ -18,7 +19,7 @@ namespace minifica.domain.Manager
             };
         }
 
-        public override List<ActionViewModel> CollectionConverter(List<data.Models.Action> entities)
+        public override List<ActionViewModel> CollectionConverter(List<ActionEntity> entities)
         {
             return entities.Select(m => new ActionViewModel()
             {
@@ -28,7 +29,7 @@ namespace minifica.domain.Manager
             }).ToList();
         }
 
-        public override data.Models.Action UpdatedConverter(ActionViewModel viewModel, data.Models.Action entity)
+        public override ActionEntity UpdatedConverter(ActionViewModel viewModel, ActionEntity entity)
         {
             entity.Name = viewModel.Name;
             entity.Active = viewModel.Active;
@@ -36,7 +37,7 @@ namespace minifica.domain.Manager
             return entity;
         }
 
-        public override ActionViewModel SingleConverter(data.Models.Action entity)
+        public override ActionViewModel SingleConverter(ActionEntity entity)
         {
             return new ActionViewModel()
             {

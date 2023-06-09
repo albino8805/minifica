@@ -14,9 +14,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
+builder.Services.AddScoped<IActionRepository, ActionRepository>();
+builder.Services.AddScoped<IModuleActionRepository, ModuleActionRepository>();
+builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<ICountryManager, CountryManager>();
 builder.Services.AddScoped<IModuleManager, ModuleManager>();
+builder.Services.AddScoped<IActionManager, ActionManager>();
+builder.Services.AddScoped<IModuleActionManager, ModuleActionManager>();
+builder.Services.AddScoped<IProfileManager, ProfileManager>();
+builder.Services.AddScoped<IUserManager, UserManager>();
 
 var app = builder.Build();
 
