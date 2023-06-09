@@ -1,8 +1,11 @@
-﻿namespace minifica.data.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace minifica.data.Models
 {
     public class ModuleAction : BaseEntity
     {
-        public int ModuleFK { get; set; }
+		[ForeignKey("ModuleFKNavigation")]
+		public int ModuleFK { get; set; }
 
         public int ActionFK { get; set; }
 

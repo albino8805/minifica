@@ -5,7 +5,7 @@ using minifica.domain.IManager;
 
 namespace minifica.domain.Manager
 {
-    internal class ProfileManager : BaseManager<ProfileViewModel, Profile>, IProfileManager
+    public class ProfileManager : BaseManager<ProfileViewModel, Profile>, IProfileManager
     {
         public ProfileManager(IProfileRepository repository) : base(repository) { }
 

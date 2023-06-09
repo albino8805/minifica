@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using minifica.data.Models;
 using minifica.data.ViewModels;
 using minifica.domain.IManager;
-using ActionEntity = minifica.data.Models.Action;
 
 namespace minifica.api.Controllers
 {
-    public class ActionController : BaseController<ActionViewModel, ActionEntity>
+    public class UserController : BaseController<UserViewModel, User>
     {
-        public ActionController(IActionManager manager) : base(manager) { }
+        public UserController(IUserManager manager) : base(manager) { }
 
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
@@ -16,10 +16,10 @@ namespace minifica.api.Controllers
         public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
-        public override IActionResult Add(ActionViewModel action) => base.Add(action);
+        public override IActionResult Add(UserViewModel user) => base.Add(user);
 
         [HttpPatch]
-        public override IActionResult Update(int id, ActionViewModel action) => base.Update(id, action);
+        public override IActionResult Update(int id, UserViewModel user) => base.Update(id, user);
 
         [HttpDelete]
         public override IActionResult Delete(int id) => base.Delete(id);

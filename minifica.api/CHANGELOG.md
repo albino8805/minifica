@@ -1,7 +1,13 @@
 ﻿### Changelog
 
+## [DevOps-12] - [2023-06-08] - Alfredo Ferretis
+* Created CRUD entity User.
+
 ## [DevOps-4] - [2023-06-02] - Miguel Lopez
 * Created CRUD entity Country.
+
+## [DevOps-11] - [2023-06-05] - Alfredo Ferretis
+* Created CRUD entity ModuleAction.
 
 ## [DevOps-10] - [2023-06-05] - Alfredo Ferretis
 * Created CRUD entity Profile.

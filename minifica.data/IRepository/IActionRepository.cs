@@ -1,6 +1,8 @@
-﻿namespace minifica.data.IRepository
+﻿using ActionEntity = minifica.data.Models.Action;
+
+namespace minifica.data.IRepository
 {
-    public interface IActionRepository : IBaseRepository<Models.Action>
+    public interface IActionRepository : IBaseRepository<ActionEntity>
     {
 
     }
