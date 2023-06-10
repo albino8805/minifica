@@ -1,6 +1,12 @@
 ﻿### Changelog
 
 ## [DevOps-12] - [2023-06-08] - Alfredo Ferretis
+* Added Data Annotation Action, Module, ModuleAction, Profile, User.
+
+## [DevOps-5] - [2023-06-08] - Miguel Lopez
+* Created CRUD entity State.
+
+## [DevOps-12] - [2023-06-08] - Alfredo Ferretis
 * Created CRUD entity User.
 
 ## [DevOps-4] - [2023-06-02] - Miguel Lopez
