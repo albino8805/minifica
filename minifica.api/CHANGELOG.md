@@ -1,5 +1,8 @@
 ﻿### Changelog
 
+## [DevOps-6] - [2023-06-09] - Miguel Lopez
+* Created CRUD entity Town.
+
 ## [DevOps-13] - [2023-06-09] - Alfredo Ferretis
 * Created CRUD entity Partner.
 
