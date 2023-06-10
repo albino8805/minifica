@@ -1,7 +1,9 @@
 using minifica.data.IRepository;
+using minifica.data.Models;
 using minifica.data.Repository;
 using minifica.domain.IManager;
 using minifica.domain.Manager;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+string dbConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<MinificaContext>(p => p.UseSqlServer(dbConnection));
 
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
