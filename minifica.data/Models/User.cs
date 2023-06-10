@@ -34,7 +34,6 @@ namespace minifica.data.Models
 
         public DateTime UpdateAt { get; set; }
 
-        [Required]
         public int CreateBy { get; set; }
 
         public int UpdateBy { get; set; }
