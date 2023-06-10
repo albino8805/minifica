@@ -5,7 +5,9 @@ using minifica.domain.IManager;
 
 namespace minifica.api.Controllers
 {
-    public class ModuleController : BaseController<ModuleViewModel, Module>
+	[Route("api/[controller]")]
+	[ApiController]
+	public class ModuleController : BaseController<ModuleViewModel, Module>
     {
         private readonly IModuleManager _manager;
 
@@ -17,8 +19,8 @@ namespace minifica.api.Controllers
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
 
-        [HttpGet]
-        public override IActionResult GetById(int id) => base.GetById(id);
+		[HttpGet("{id}")]
+		public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
         public override IActionResult Add(ModuleViewModel module) => base.Add(module);

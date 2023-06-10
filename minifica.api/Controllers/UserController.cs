@@ -5,15 +5,17 @@ using minifica.domain.IManager;
 
 namespace minifica.api.Controllers
 {
-    public class UserController : BaseController<UserViewModel, User>
+	[Route("api/[controller]")]
+	[ApiController]
+	public class UserController : BaseController<UserViewModel, User>
     {
         public UserController(IUserManager manager) : base(manager) { }
 
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
 
-        [HttpGet]
-        public override IActionResult GetById(int id) => base.GetById(id);
+		[HttpGet("{id}")]
+		public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
         public override IActionResult Add(UserViewModel user) => base.Add(user);

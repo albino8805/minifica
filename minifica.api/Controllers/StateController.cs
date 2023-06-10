@@ -5,7 +5,9 @@ using minifica.domain.IManager;
 
 namespace minifica.api.Controllers
 {
-    public class StateController : BaseController<StateViewModel, State>
+	[Route("api/[controller]")]
+	[ApiController]
+	public class StateController : BaseController<StateViewModel, State>
     {
         private readonly IStateManager _manager;
 
@@ -16,8 +18,8 @@ namespace minifica.api.Controllers
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
 
-        [HttpGet]
-        public override IActionResult GetById(int id) => base.GetById(id);
+		[HttpGet("{id}")]
+		public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
         public override IActionResult Add(StateViewModel state) => base.Add(state);
