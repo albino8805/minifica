@@ -24,7 +24,11 @@ builder.Services.AddScoped<IModuleActionRepository, ModuleActionRepository>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IStateRepository, StateRepository>();
+<<<<<<< HEAD
 builder.Services.AddScoped<ITownRepository, TownRepository>();
+=======
+builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
+>>>>>>> 65613aa589b98f166386c3b8e106a94e98a998d0
 
 builder.Services.AddScoped<ICountryManager, CountryManager>();
 builder.Services.AddScoped<IModuleManager, ModuleManager>();
@@ -33,7 +37,11 @@ builder.Services.AddScoped<IModuleActionManager, ModuleActionManager>();
 builder.Services.AddScoped<IProfileManager, ProfileManager>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 builder.Services.AddScoped<IStateManager, StateManager>();
+<<<<<<< HEAD
 builder.Services.AddScoped<ITownManager, TownManager>();
+=======
+builder.Services.AddScoped<IPartnerManager, PartnerManager>();
+>>>>>>> 65613aa589b98f166386c3b8e106a94e98a998d0
 
 var app = builder.Build();
 

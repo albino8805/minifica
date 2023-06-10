@@ -1,7 +1,10 @@
 ﻿### Changelog
 
 ## [DevOps-6] - [2023-06-09] - Miguel Lopez
-* Created entity Town and Neighbourhood.
+* Created CRUD entity Town.
+
+## [DevOps-13] - [2023-06-09] - Alfredo Ferretis
+* Created CRUD entity Partner.
 
 ## [DevOps-12] - [2023-06-08] - Alfredo Ferretis
 * Added Data Annotation Action, Module, ModuleAction, Profile, User.

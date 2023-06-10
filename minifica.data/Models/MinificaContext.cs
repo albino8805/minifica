@@ -23,5 +23,6 @@ namespace minifica.data.Models
 		public virtual DbSet<State> States { get; set; }
 		public virtual DbSet<Town> Towns { get; set; }
 		public virtual DbSet<User> Users { get; set; }
+		public virtual DbSet<Partner> Partners { get; set; }
 	}
 }
