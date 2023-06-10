@@ -6,6 +6,6 @@ namespace minifica.data.ViewModels
     {
         public string Name { get; set; }
 
-        public string CountryFk { get; set; }
+        public int CountryFk { get; set; }
     }
 }
