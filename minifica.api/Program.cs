@@ -24,6 +24,7 @@ builder.Services.AddScoped<IModuleActionRepository, ModuleActionRepository>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IStateRepository, StateRepository>();
+builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 
 builder.Services.AddScoped<ICountryManager, CountryManager>();
 builder.Services.AddScoped<IModuleManager, ModuleManager>();
@@ -32,6 +33,7 @@ builder.Services.AddScoped<IModuleActionManager, ModuleActionManager>();
 builder.Services.AddScoped<IProfileManager, ProfileManager>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 builder.Services.AddScoped<IStateManager, StateManager>();
+builder.Services.AddScoped<IPartnerManager, PartnerManager>();
 
 var app = builder.Build();
 
