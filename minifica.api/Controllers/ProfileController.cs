@@ -5,15 +5,17 @@ using minifica.domain.IManager;
 
 namespace minifica.api.Controllers
 {
-    public class ProfileController : BaseController<ProfileViewModel, Profile>
+	[Route("api/[controller]")]
+	[ApiController]
+	public class ProfileController : BaseController<ProfileViewModel, Profile>
     {
         public ProfileController(IProfileManager manager) : base(manager) { }
 
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
 
-        [HttpGet]
-        public override IActionResult GetById(int id) => base.GetById(id);
+		[HttpGet("{id}")]
+		public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
         public override IActionResult Add(ProfileViewModel profile) => base.Add(profile);

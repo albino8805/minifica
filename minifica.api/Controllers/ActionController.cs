@@ -5,14 +5,16 @@ using ActionEntity = minifica.data.Models.Action;
 
 namespace minifica.api.Controllers
 {
-    public class ActionController : BaseController<ActionViewModel, ActionEntity>
+	[Route("api/[controller]")]
+	[ApiController]
+	public class ActionController : BaseController<ActionViewModel, ActionEntity>
     {
         public ActionController(IActionManager manager) : base(manager) { }
 
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
