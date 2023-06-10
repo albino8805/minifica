@@ -5,6 +5,8 @@ using minifica.domain.IManager;
 
 namespace minifica.api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class PartnerController : BaseController<PartnerViewModel, Partner>
     {
         public PartnerController(IPartnerManager manager) : base(manager) { }
@@ -12,7 +14,7 @@ namespace minifica.api.Controllers
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
