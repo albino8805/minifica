@@ -13,12 +13,14 @@ namespace minifica.domain.Manager
         {
             return new State()
             {
-                Name = viewModel.Name
+                Name = viewModel.Name,
+                CountryFK = viewModel.CountryFk
             };
         }
         public override State UpdatedConverter(StateViewModel viewModel, State entity)
         {
             entity.Name = viewModel.Name;
+            entity.CountryFK = viewModel.CountryFk;
             return entity;
         }
         public override StateViewModel SingleConverter(State entity)
@@ -27,6 +29,7 @@ namespace minifica.domain.Manager
             {
                 Id = entity.Id,
                 Name = entity.Name,
+                CountryFk = entity.CountryFK
             };
         }
         public override List<StateViewModel> CollectionConverter(List<State> entities)
@@ -34,7 +37,8 @@ namespace minifica.domain.Manager
             return entities.Select(p => new StateViewModel()
             {
                 Id = p.Id,
-                Name = p.Name
+                Name = p.Name,
+                CountryFk = p.CountryFK
             }).ToList();
         }
     }

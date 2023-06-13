@@ -7,14 +7,10 @@ namespace minifica.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TownController : BaseController<TownViewModel, Town>
+    public class SchoolBillingInformationController : BaseController<SchoolBillingInformationViewModel, SchoolBillingInformation>
     {
-        private readonly ITownManager _manager;
+        public SchoolBillingInformationController(ISchoolBillingInformationManager manager) : base(manager) { }
 
-        public TownController(ITownManager manager) : base(manager)
-        {
-            _manager = manager;
-        }
         [HttpGet]
         public override IActionResult GetAll() => base.GetAll();
 
@@ -22,10 +18,10 @@ namespace minifica.api.Controllers
         public override IActionResult GetById(int id) => base.GetById(id);
 
         [HttpPost]
-        public override IActionResult Add(TownViewModel town) => base.Add(town);
+        public override IActionResult Add(SchoolBillingInformationViewModel schoolBillingInformation) => base.Add(schoolBillingInformation);
 
         [HttpPatch]
-        public override IActionResult Update(int id, TownViewModel town) => base.Update(id, town);
+        public override IActionResult Update(int id, SchoolBillingInformationViewModel schoolBillingInformation) => base.Update(id, schoolBillingInformation);
 
         [HttpDelete]
         public override IActionResult Delete(int id) => base.Delete(id);

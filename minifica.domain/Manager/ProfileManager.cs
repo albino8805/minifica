@@ -13,7 +13,6 @@ namespace minifica.domain.Manager
         {
             return new Profile()
             {
-                Id = viewModel.Id,
                 Name = viewModel.Name,
                 Active = viewModel.Active,
                 CreatedAt = viewModel.CreatedAt,
