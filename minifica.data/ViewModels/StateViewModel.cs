@@ -1,6 +1,4 @@
-﻿using minifica.data.Models;
-
-namespace minifica.data.ViewModels
+﻿namespace minifica.data.ViewModels
 {
     public class StateViewModel : BaseViewModel
     {

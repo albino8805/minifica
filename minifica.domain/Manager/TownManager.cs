@@ -13,12 +13,14 @@ namespace minifica.domain.Manager
         {
             return new Town()
             {
-                Name = viewModel.Name
+                Name = viewModel.Name,
+                StateFK = viewModel.StateFk
             };
         }
         public override Town UpdatedConverter(TownViewModel viewModel, Town entity)
         {
             entity.Name = viewModel.Name;
+            entity.StateFK = viewModel.StateFk;
             return entity;
         }
         public override TownViewModel SingleConverter(Town entity)
@@ -27,6 +29,7 @@ namespace minifica.domain.Manager
             {
                 Id = entity.Id,
                 Name = entity.Name,
+                StateFk = entity.StateFK
             };
         }
         public override List<TownViewModel> CollectionConverter(List<Town> entities)
@@ -34,7 +37,8 @@ namespace minifica.domain.Manager
             return entities.Select(p => new TownViewModel()
             {
                 Id = p.Id,
-                Name = p.Name
+                Name = p.Name,
+                StateFk = p.StateFK
             }).ToList();
         }
     }

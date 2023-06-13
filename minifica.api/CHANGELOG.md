@@ -1,5 +1,8 @@
 ﻿### Changelog
 
+## [DevOps-14] - [2023-06-13] - Alfredo Ferretis
+* Created CRUD entity SchoolBillingInformation.
+
 ## [DevOps-6] - [2023-06-09] - Miguel Lopez
 * Created CRUD entity Town.
 
