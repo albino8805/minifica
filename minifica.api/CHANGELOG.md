@@ -1,5 +1,8 @@
 ﻿### Changelog
 
+## [DevOps-15] - [2023-06-15] - Alfredo Ferretis
+* Created CRUD entity School.
+* 
 ## [DevOps-14] - [2023-06-13] - Alfredo Ferretis
 * Created CRUD entity SchoolBillingInformation.
 
