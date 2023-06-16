@@ -35,5 +35,7 @@ namespace minifica.data.Models
         public virtual DbSet<Partner> Partners { get; set; }
 
         public virtual DbSet<SchoolBillingInformation> SchoolBillingInformations { get; set; }
+
+        public virtual DbSet<School> Schools { get; set; }
     }
 }
