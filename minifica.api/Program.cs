@@ -41,6 +41,17 @@ builder.Services.AddScoped<IPartnerManager, PartnerManager>();
 builder.Services.AddScoped<ISchoolBillingInformationManager, SchoolBillingInformationManager>();
 builder.Services.AddScoped<ISchoolManager, SchoolManager>();
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy(name: MyAllowSpecificOrigins,
+					  policy =>
+					  {
+						  policy.WithOrigins("*");
+					  });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -49,6 +60,8 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseHttpsRedirection();
 
