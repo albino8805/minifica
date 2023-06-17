@@ -13,9 +13,8 @@ namespace minifica.domain.Manager
         {
             return new ActionEntity()
             {
-                Id = viewModel.Id,
                 Name = viewModel.Name,
-                Active = viewModel.Active
+                Active = true
             };
         }
 
@@ -32,7 +31,6 @@ namespace minifica.domain.Manager
         public override ActionEntity UpdatedConverter(ActionViewModel viewModel, ActionEntity entity)
         {
             entity.Name = viewModel.Name;
-            entity.Active = viewModel.Active;
 
             return entity;
         }
@@ -47,6 +45,4 @@ namespace minifica.domain.Manager
             };
         }
     }
-
-
 }
