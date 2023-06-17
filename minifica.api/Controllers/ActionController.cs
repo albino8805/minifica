@@ -5,9 +5,9 @@ using ActionEntity = minifica.data.Models.Action;
 
 namespace minifica.api.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class ActionController : BaseController<ActionViewModel, ActionEntity>
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ActionController : BaseController<ActionViewModel, ActionEntity>
     {
         public ActionController(IActionManager manager) : base(manager) { }
 
@@ -20,7 +20,7 @@ namespace minifica.api.Controllers
         [HttpPost]
         public override IActionResult Add(ActionViewModel action) => base.Add(action);
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public override IActionResult Update(int id, ActionViewModel action) => base.Update(id, action);
 
         [HttpDelete]
