@@ -24,7 +24,7 @@ namespace minifica.api.Controllers
         [HttpPost]
         public override IActionResult Add(CountryViewModel country) => base.Add(country);
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public override IActionResult Update(int id, CountryViewModel country) => base.Update(id, country);
 
         [HttpDelete]

@@ -20,7 +20,7 @@ namespace minifica.api.Controllers
         [HttpPost]
         public override IActionResult Add(UserViewModel user) => base.Add(user);
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public override IActionResult Update(int id, UserViewModel user) => base.Update(id, user);
 
         [HttpDelete]

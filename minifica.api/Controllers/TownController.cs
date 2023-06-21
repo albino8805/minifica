@@ -24,7 +24,7 @@ namespace minifica.api.Controllers
         [HttpPost]
         public override IActionResult Add(TownViewModel town) => base.Add(town);
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public override IActionResult Update(int id, TownViewModel town) => base.Update(id, town);
 
         [HttpDelete]
