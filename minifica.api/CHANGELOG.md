@@ -1,5 +1,8 @@
 ﻿### Changelog
 
+## [DevOps-15] - [2023-06-20] - Alfredo Ferretis
+* Updated Patch Controllers.
+
 ## [DevOps-15] - [2023-06-15] - Alfredo Ferretis
 * Created CRUD entity School.
 * 

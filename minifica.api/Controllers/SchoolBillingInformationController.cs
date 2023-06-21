@@ -20,7 +20,7 @@ namespace minifica.api.Controllers
         [HttpPost]
         public override IActionResult Add(SchoolBillingInformationViewModel schoolBillingInformation) => base.Add(schoolBillingInformation);
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public override IActionResult Update(int id, SchoolBillingInformationViewModel schoolBillingInformation) => base.Update(id, schoolBillingInformation);
 
         [HttpDelete]
