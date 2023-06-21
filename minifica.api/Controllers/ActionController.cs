@@ -23,7 +23,7 @@ namespace minifica.api.Controllers
         [HttpPatch("{id}")]
         public override IActionResult Update(int id, ActionViewModel action) => base.Update(id, action);
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public override IActionResult Delete(int id) => base.Delete(id);
     }
 }
