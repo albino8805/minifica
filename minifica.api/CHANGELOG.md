@@ -1,5 +1,8 @@
 ﻿### Changelog
 
+## [DevOps-7] - [2023-06-23] - Miguel Lopez
+* Created CRUD entity Neighbourhood.
+
 ## [DevOps-15] - [2023-06-21] - Alfredo Ferretis
 * Delete Patch Controllers.
 

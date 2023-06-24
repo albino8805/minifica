@@ -28,6 +28,7 @@ builder.Services.AddScoped<ITownRepository, TownRepository>();
 builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 builder.Services.AddScoped<ISchoolBillingInformationRepository, SchoolBillingInformationRepository>();
 builder.Services.AddScoped<ISchoolRepository, SchoolRepository>();
+builder.Services.AddScoped<INeighbourhoodRepository, NeighbourhoodRepository>();
 
 builder.Services.AddScoped<ICountryManager, CountryManager>();
 builder.Services.AddScoped<IModuleManager, ModuleManager>();
@@ -40,6 +41,7 @@ builder.Services.AddScoped<ITownManager, TownManager>();
 builder.Services.AddScoped<IPartnerManager, PartnerManager>();
 builder.Services.AddScoped<ISchoolBillingInformationManager, SchoolBillingInformationManager>();
 builder.Services.AddScoped<ISchoolManager, SchoolManager>();
+builder.Services.AddScoped<INeighbourhoodManager, NeighbourhoodManager>();
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
