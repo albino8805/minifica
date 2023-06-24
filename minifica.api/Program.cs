@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 string dbConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MinificaContext>(p => p.UseSqlServer(dbConnection));
 
-builder.Configuration.GetSection("JwtSetting").Get<JwtSetting>();
+builder.Services.Configure<JwtSetting>(builder.Configuration.GetSection("JwtSetting"));
 
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IModuleRepository, ModuleRepository>();

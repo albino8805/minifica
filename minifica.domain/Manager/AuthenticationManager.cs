@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Query.Internal;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using minifica.data.IRepository;
 using minifica.data.Repository;
@@ -20,8 +21,9 @@ namespace minifica.domain.Manager
 		private IUserRepository _userRepository;
 		readonly JwtSetting _jwtSetting;
 
-		public AuthenticationManager(IUserRepository userRepository)
+		public AuthenticationManager(IOptions<JwtSetting> options, IUserRepository userRepository)
 		{
+			_jwtSetting = options.Value;
 			_userRepository = userRepository;
 		}
 
