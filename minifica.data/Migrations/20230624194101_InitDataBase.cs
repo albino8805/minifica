@@ -1,11 +1,12 @@
-﻿#nullable disable
-
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
 
 namespace minifica.data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitMinificaDataBase : Migration
+    public partial class InitDataBase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +17,8 @@ namespace minifica.data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,7 +31,8 @@ namespace minifica.data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -43,7 +46,8 @@ namespace minifica.data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(350)", maxLength: 350, nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(350)", maxLength: 350, nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,7 +62,8 @@ namespace minifica.data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -72,7 +77,8 @@ namespace minifica.data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    CountryFK = table.Column<int>(type: "int", nullable: false)
+                    CountryFK = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,7 +99,8 @@ namespace minifica.data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ModuleFK = table.Column<int>(type: "int", nullable: false),
                     ActionFK = table.Column<int>(type: "int", nullable: false),
-                    ProfileFK = table.Column<int>(type: "int", nullable: false)
+                    ProfileFK = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -133,7 +140,8 @@ namespace minifica.data.Migrations
                     CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
-                    UpdateBy = table.Column<int>(type: "int", nullable: false)
+                    UpdateBy = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -153,7 +161,8 @@ namespace minifica.data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    StateFK = table.Column<int>(type: "int", nullable: false)
+                    StateFK = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -173,7 +182,8 @@ namespace minifica.data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    TownFK = table.Column<int>(type: "int", nullable: false)
+                    TownFK = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -182,6 +192,105 @@ namespace minifica.data.Migrations
                         name: "FK_Neighbourhoods_Towns_TownFK",
                         column: x => x.TownFK,
                         principalTable: "Towns",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Partners",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Street = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ExternalNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    InternalNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    NeighbourhoodFK = table.Column<int>(type: "int", nullable: false),
+                    PostalCode = table.Column<int>(type: "int", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreateBy = table.Column<int>(type: "int", nullable: false),
+                    UpdateBy = table.Column<int>(type: "int", nullable: false),
+                    ContactName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ContactPhone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    ContactEmail = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Partners", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Partners_Neighbourhoods_NeighbourhoodFK",
+                        column: x => x.NeighbourhoodFK,
+                        principalTable: "Neighbourhoods",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SchoolBillingInformations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RFC = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    Street = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ExternalNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    InternalNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    NeighbourhoodFK = table.Column<int>(type: "int", nullable: false),
+                    PostalCode = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<int>(type: "int", nullable: false),
+                    UpdatedBy = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SchoolBillingInformations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SchoolBillingInformations_Neighbourhoods_NeighbourhoodFK",
+                        column: x => x.NeighbourhoodFK,
+                        principalTable: "Neighbourhoods",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Schools",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PartnerFK = table.Column<int>(type: "int", nullable: false),
+                    Street = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ExternalNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    InternalNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    NeighbourhoodFK = table.Column<int>(type: "int", nullable: false),
+                    PostalCode = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<int>(type: "int", nullable: false),
+                    UpdatedBy = table.Column<int>(type: "int", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Schools", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Schools_Neighbourhoods_NeighbourhoodFK",
+                        column: x => x.NeighbourhoodFK,
+                        principalTable: "Neighbourhoods",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -207,6 +316,21 @@ namespace minifica.data.Migrations
                 column: "TownFK");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Partners_NeighbourhoodFK",
+                table: "Partners",
+                column: "NeighbourhoodFK");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SchoolBillingInformations_NeighbourhoodFK",
+                table: "SchoolBillingInformations",
+                column: "NeighbourhoodFK");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Schools_NeighbourhoodFK",
+                table: "Schools",
+                column: "NeighbourhoodFK");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_States_CountryFK",
                 table: "States",
                 column: "CountryFK");
@@ -229,7 +353,13 @@ namespace minifica.data.Migrations
                 name: "ModulesActions");
 
             migrationBuilder.DropTable(
-                name: "Neighbourhoods");
+                name: "Partners");
+
+            migrationBuilder.DropTable(
+                name: "SchoolBillingInformations");
+
+            migrationBuilder.DropTable(
+                name: "Schools");
 
             migrationBuilder.DropTable(
                 name: "Users");
@@ -241,10 +371,13 @@ namespace minifica.data.Migrations
                 name: "Modules");
 
             migrationBuilder.DropTable(
-                name: "Towns");
+                name: "Neighbourhoods");
 
             migrationBuilder.DropTable(
                 name: "Profiles");
+
+            migrationBuilder.DropTable(
+                name: "Towns");
 
             migrationBuilder.DropTable(
                 name: "States");

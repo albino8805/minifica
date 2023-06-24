@@ -4,6 +4,8 @@ using minifica.data.Repository;
 using minifica.domain.IManager;
 using minifica.domain.Manager;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using minifica.domain.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,8 @@ builder.Services.AddSwaggerGen();
 
 string dbConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MinificaContext>(p => p.UseSqlServer(dbConnection));
+
+builder.Configuration.GetSection("JwtSetting").Get<JwtSetting>();
 
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
@@ -30,6 +34,7 @@ builder.Services.AddScoped<ISchoolBillingInformationRepository, SchoolBillingInf
 builder.Services.AddScoped<ISchoolRepository, SchoolRepository>();
 builder.Services.AddScoped<INeighbourhoodRepository, NeighbourhoodRepository>();
 
+builder.Services.AddScoped<IAuthenticationManager, AuthenticationManager>();
 builder.Services.AddScoped<ICountryManager, CountryManager>();
 builder.Services.AddScoped<IModuleManager, ModuleManager>();
 builder.Services.AddScoped<IActionManager, ActionManager>();

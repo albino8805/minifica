@@ -10,6 +10,6 @@ namespace minifica.data.Models
         public int Id { get; set; }
 
         [Required]
-        public bool Active = true;
+        public bool Active { get; set; } = true;
     }
 }
